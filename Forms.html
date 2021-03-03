@@ -1,0 +1,314 @@
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <meta charset="utf-8">
+     <title>FORMS</title>
+   </head>
+   <body>
+     <h1>FORMS</h1>
+     <br>
+      <h2>FORM STRUCTURE</h2>
+      <p>All the form controls live in the < form > element.
+      It should always carry the <b>action</b> attribute and usually will have a <b>method</b> and <b>id</b> attribute as well.
+      Method : Form can be sent using one of two method :</p>
+      <ul>
+        <li>GET : the values from the form are added at the end of the URL (specified in the action attribute). use this for : </li>
+        <ul>
+          <li>Short form (search boxes for instance)</li>
+          <li>When you are just retrieveing data with no need to store it or delete it from a database</li>
+        </ul>
+        <li>POST : The values are sent to HTTP headers. You should use the Post method if :</li>
+        <ul>
+          <li>user can upload a file</li>
+          <li>you need to add or delete info in a database</li>
+          <li>your form is gigalong</li>
+          <li>sensitive information is required (Password)</li>
+        </ul>
+      </ul>
+      <p>We also give as rule of thumb an <b>id</b> to forms, in order to enable scripts to do their job. (Check if a required field has a value for instance)</p>
+        <h2>TEXT INPUT</h2>
+        <p>The <b>< input ></b> element is used followed by several attributes that will dictate what kind of input you will get. Let's have a look at a few of these attributes :
+        <ul>
+          <li><b>type="text"</b> : this will create a single line input.</li>
+          <li> <b>name</b> will name the piece of data gathered by the form a very common example would be <i>name="username"</i> </li>
+          <li>maxlength is quite common for database where there is a size lkimit for example.</li>
+          <li>size might be found in boomer code, but this type of things are now handled by CSS</li>
+        </ul> </p>
+          <h3>EXAMPLE</h3>
+          <form class="field" action="index.html" method="get">
+            <p>Username :
+            <input type="text" name="Username" value="what's your name?"></p>
+          </form>
+
+        <h2>PASSWORD INPUT</h2>
+        <p>In the same < input > element you can define the <b>type=password</b>. This will hide the characters on the screen, but should never be used for very sensitive info. You would need an SSL to secure such data.</p>
+
+            <h3>EXAMPLE</h3>
+          <form class="login" action="index.html" method="post">
+          <p>Username :
+          <input type="text" name="Login" value="Login" maxlength="15"></p>
+          <p>Password :
+          <input type="password" name="Password" maxlength="15"></p>
+          </form>
+
+          <h2>TEXT AREA</h2>
+          <p>The <b>< textarea ></b> is not an empty element, therefore you need an opening and closing tags. Without any script, the user will have to delete what's inside the box manually.</p>
+          <h3>EXAMPLE</h3>
+          <form class="feedback" action="index.html" method="get">
+          <p>What do you think of Yasuo players?</p>
+          <textarea name="name" rows="4" cols="40">Tell us what you think...</textarea>
+          </form>
+
+          <h2>RADIO BUTTON</h2>
+            <p>The input type radio is used when a choice has to be made between few options <b>type=radio</b></p>
+            <ul>
+              <li><b>name</b> should be the same for all the radio buttons as it is sent to the server along with the value they chose.</li>
+              <li><b>value</b> is what is sent to the server depending on which option is used </li>
+              <li><b>checked</b> indicates what should be selected "by default" when the page is opened</li>
+            </ul>
+            <p>Careful, never use radio buttons is the option should be unselected or empty by the user.</p>
+
+              <h3>EXAMPLE</h3>
+            <form class="position" action="index.html">
+              <p>What position do you play ?
+              <br>
+            <input type="radio" name="Position" value="Support">
+            Support
+            <input type="radio" name="Position" value="Adc">
+            Adc
+            <input type="radio" name="Position" value="Mid">
+            Mid
+            <input type="radio" name="Position" value="Jungle">
+            Jungle
+            <input type="radio" name="Position" value="Top">
+            Top</p>
+            </form>
+
+          <h2>CHECKBOX</h2>
+          <p><b>< input type="checkbox" ></b> is used when several options can be selected and unselected.
+          <ul>
+            <li><b>name</b> should be the same for all options, as always, for the same reasons</li>
+            <li><b>value</b> is what is sent to the server depending on the option chosen</li>
+            <li><b>checked</b> indicates what should be selected by default, if needed.</li>
+          </ul></p>
+
+            <h3>EXAMPLE</h3>
+          <form class="streamer_opinion" action="index.html">
+            <p>What do you think of el ElTruco ?
+            <br>
+          <input type="checkbox" name="trucofeedback" value="dog">
+          DOOOOG
+          <input type="checkbox" name="trucofeedback" value="woof">
+          WOOF
+          <input type="checkbox" name="trucofeedback" value="lacana">
+          LA CANA</p>
+          </form>
+
+          <h2>DROP DOWN LIST BOX</h2>
+          <p><b>< select ></b> allows the user to select one option from a drop down list. It is good to note that the <b>name</b> attribute is chosen <u>WITHIN</u> the select element.</p>
+          <ul>
+            <li><b>< option ></b> is used to specify the options (captain obvious) available to the user. Anything written between the opening and closing tag will be shown on screen.</li>
+            <li>We still use the attribute <b>value</b> to indicate what will be sent to the server.</li>
+            <li><b>selected</b> will be the attribute indicating the value by default.</li>
+          </ul>
+
+          <h3>EXAMPLE</h3>
+          <form class="playstyle" action="index.html" method="post">
+            <p>In lane, you like to play :</p>
+            <select name="playstyle">
+              <option value="Aggro">Aggro</option>
+              <option value="Passive">Passive</option>
+              <option value="Strategic">Strategic</option>
+              <option value="Muteall">/mute all</option>
+              <option value="Gates">Breaching all day</option>
+            </select>
+          </form>
+
+          <h2>MULTIPLE SELECT BOX</h2>
+        <ul>
+          <li>The <b>size</b> attribute allows to show several <b>options</b> in the box. (this doesn't work well on some browser, better be careful using it)</li>
+          <li>the <b>multiple</b> element allows to choose several options, you still need to give this attribute the value multiple. It sounds confusing, but it looks like this multiple="multiple"</li>
+        </ul>
+        <p><u>The user still has to hold Control (or Cmd on Mac) to select several options.</u></p>
+
+            <h3>EXAMPLE</h3>
+
+        <form action="index.html" method="post">
+          <p>What FinalFantasy game(s) do you prefer?</p>
+          <select name="FavouriteFF"size="4" multiple="multiple">
+            <option value="FF7">FF7</option>
+            <option value="FF8">FF8</option>
+            <option value="FF9">FF9</option>
+            <option value="FF10">FF10</option>
+            <option value="FF11+">FF11+</option>
+          </select>
+        </form>
+
+        <h2>FILE INPUT BOX</h2>
+        <p>To allow the user to deposit a file, you need <b>< input ></b>. <img src="Images/Careful.jpg" alt="!" width="20" height="20"><u>THE POST METHOD IS MANDATORY FOR FILE INPUT, GET DOESNT ALLOW IT</u>
+        <br>
+        <b>type="file"</b> is the attribute you need to use. It creates a text input looking box followed by the famous browse button</p>
+
+          <h3>EXAMPLE</h3>
+          <form action="index.html" method="post">
+            <p>Update your best bronze plays :</p>
+            <input type="file" name="bronzeplay">
+            <br>
+            <input type="submit" value="Upload">
+          </form>
+
+        <h2>SUBMIT BUTTON</h2>
+
+        <p>As you can see in the example above, <b>type="submit"</b> is used to send a form to the server. It can use a name attribute, but doesn't really need one. The <b>value</b> attribute is important tho, as it will be what appears on the button. You can personalize the button with CSS, or using an image.</p>
+
+          <h3>EXAMPLE</h3>
+          <form action="index.html" method="post">
+            <p>Subscribe to "how to create a submit button" :</p>
+            <input type="submit" name="osef" value="Yes, please help.">
+          </form>
+
+          <h2>IMAGE BUTTON</h2>
+
+          You can use the <b>type="image"</b> to customise your submit button. The <b>"< img >" button and all the attribute we saw</b>
+
+            <h3>EXAMPLE</h3>
+
+            <form action="index.html" method="post">
+              <p>Are you cool ? Then click on the button</p>
+              <br>
+              <input type="image" <source src="Images/Iamcool.jpg" width="70" height="50" name="coolbutton" value="subscribed">
+            </form>
+
+            <h2>BUTTONS & HIDDEN CONTROLS</h2>
+            <ul>
+              <li>The <b>"button"</b> element was created to allow other elements to appear inside the button. For example text AND image</li>
+              <li><b>"< input type="hidden" >"</b> this type of form control won't be shown on the webpage. Very useful to add information on a field that the user doesn't need to know about.</li>
+            </ul>
+
+              <h3>EXAMPLE</h3>
+              <form action="index.html" method="post">
+              <button><img src="Images/Bark.jpg" width="70" height="60" alt="BarkingDog">BARK BARK</button>
+              </form>
+
+              <h2>LABELLING FORM CONTROLS</h2>
+
+              <p>Each form control should have a label assigned, it helps with accessibility (for people with visual impairment for instance)
+                <br />
+              There is two ways to apply a label to a frm control : </p>
+
+              <ul>
+                <li>By wrapping the form control code around opening and closing label tags </li>
+                <li>Give an id to the form control and use the <b>for</b> attribute to label it <i>example : < label for="Male" > Male < /label ></i></li>
+              </ul>
+
+              <p><u>Common rules :</u></p>
+              <ul>
+                <li>labels are usually placed to the left for :
+                <ul>
+                  <li>Text inputs</li>
+                  <li>text areas</li>
+                  <li>drop lists</li>
+                  <li>select boxes</li>
+                  <li>File upload</li>
+                </ul>
+                </li>
+                <li>labels are usually placed to the right for :
+                <ul>
+                  <li>Individual checkboxes</li>
+                  <li>Individual radio buttons</li>
+                </ul>
+              </li>
+              </ul>
+
+                <h3>EXAMPLE (INSPECT ELEMENT TO SEE LABELS)</h3>
+
+                <form action="index.html">
+                  <label for="Age">Age :</label>
+                  <input id="Age" type="text" name="Age">
+                  <br>
+                  <p>Gender :</p>
+                  <input id="Male" type="radio" name="Gender" value="M">
+                  <label for="Male">Male</label>
+                  <input id="Female" type="radio" name="Gender" value="F">
+                  <label for="Female">Female</label>
+                </form>
+
+              <h2>GROUPING FOR ELEMENTS :</h2>
+              <p><b>< fieldset ></b> can group related form controls together inside its element. The appearance of this group can of course be customised with CSS. <b>< legend ></b> is an element that can come directly after fieldset. and is a caption indicating yhe purpose of the groupof form controls.</p>
+
+                <h3>EXAMPLE</h3>
+
+              <form  action="index.html" method="post">
+                <fieldset>
+                  <legend>League Recap</legend>
+                  <label for="Elo">Elo :</label>
+                  <br>
+                  <input id="Elo" type="text" name="Rank" value="Bronze dawg">
+                  <br>
+                  <br>
+                  <label for="Main">Main :</label>
+                  <br>
+                  <input id="Main "type="text" name="Main">
+                </fieldset>
+                  </form>
+
+                <h2>FORM VALIDATION</h2>
+                <p><b>required="required"</b> in the input will make the form impossible to submit as long as this form control is not filled.</p>
+
+                  <h3>EXAMPLE</h3>
+
+                <form action="index.html" method="post">
+                  <label for="login">Username :</label>
+                  <br>
+                  <input id="login" type="text" name="login" required="required">
+                  <br>
+                  <br>
+                  <label for="password">Password :</label>
+                  <br>
+                  <input type="password" name="Password" required="required">
+                  <br>
+                  <input type="submit" value="Login">
+                </form>
+
+                <h2>DATE INPUT</h2>
+
+                <p>You can use <b>"type=date"</b> as an attribute to ask specifically for a date, doesn't work for all browsers, and will replace it by a text input if that's the case.</p>
+
+                  <h3>EXAMPLE</h3>
+
+                <form action="index.html" method="post">
+                  <p>When is your birthday ?</p>
+                  <br>
+                  <label for="DateOfBirth">Date of birth : </label>
+                  <input type="date" name="DOB">
+                  <input type="submit" value="Submit">
+                </form>
+
+                <h2>EMAIL & URL INPUT</h2>
+
+                <p><b>type="email" and type="url"</b> are respectively used to ask for an email address and a URL.</p>
+
+                <h3>EXAMPLE</h3>
+
+                <form action="index.html" method="post">
+                  <p>Please enter your email address :</p>
+                  <br>
+                  <input id="Email" type="email" name="Email"
+                  <br>
+                  <p>Please enter your LinkedIn profile URL :</p>
+                  <br>
+                  <input id="LinkedIn" type="url" name="LinkedIn" >
+                  <br>
+                  <input type="submit"  value="Submit">
+                </form>
+
+
+
+
+
+
+                <br>
+                <br>
+     <a href="index.html">Back to index</a>
+   </body>
+ </html>

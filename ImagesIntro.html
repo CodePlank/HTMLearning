@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Images</title>
+  </head>
+  <body>
+    <h1>Introduction to images</h1>
+      <h2><u>If you are creating a website from scratch, it is good practice to create a folder for all the images the website will use.</u></h2>
+        <h3>Adding Images</h3>
+          <p>To add an image into the page : <ul>
+            <li>use the tag <b>< img ></b>. This is an empty element, meaning it doesn't have a closing tag.</li>
+            <li><b>src</b> tells the browser where it can find the image file (usually a relative URL)</li>
+            <li><b>alt</b> provides a description of the image if you can't see it (use by people with visual impairments or search engines, for instance)</li>
+            <li><b>title</b> can also be used with the img element to provide additional info (usuallydisplayed in a tooltipwhen the image is hovered)</li>
+            <li><b>Height</b> and <b>Width</b> are used to specify the size of the image</li>
+          </ul> </p>
+        <h3>Examples and positioning</h3>
+          <p>1. BEFORE A PARAGRAPH :<br>
+          The paragraph will start on a new line after the image :</p>
+          <img src="Images\Marexcursed.jpg" alt="Marex very Marexcursed" width="100" height="100">
+          <p>This pictures is Omega cursed</p>
+          <hr />
+          <p>2. INSIDE THE START OF A PARAGRAPH :<br>
+          The first row of text will align with the bottom of the image :</p>
+          <p><img src="Images\Marexcursed.jpg" alt="Marex very Marexcursed" width="100" height="100"> But for real this is very cursed like wtf</p>
+          <hr>
+          <p>3. IN THE MIDDLE OF A PARAGRAPH :<br>
+          The image is placed between the words :</p>
+          <p>aaaaaaaaaaaaaaaaaaa<img src="Images\Marexcursed.jpg" alt="Marex very Marexcursed" width="100" height="100">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah</p>
+        <h3>Aligning images (OLD CODE):</h3>
+          <p>Disclaimer : this isn't code that is being used nowadays, however, you might find it in previous works.</p>
+            <h4>Aligning horizontally :</h4>
+          <p><img src="Images\Marexcursed.jpg" alt="Marex very Marexcursed" width="100" height="100" align="left">  the align="left" will align the image to the left ot the text (DUH)</p>
+          <hr>
+          <p><img src="Images\Marexcursed.jpg" alt="Marex very Marexcursed" width="100" height="100" align="right"> Same shit for align="right", EZ.</p>
+          <hr>
+            <h4>Aligning images vertically :</h4>
+          <p><img src="Images\Marexcursed.jpg" alt="Marex very Marexcursed" width="200" height="200" align="top"> <b>top</b> will align <b>FIRST</b> line of surrounding text. not the rest : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah BITCONNNNNNNNNNNNNNNNNNNNNNEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEECT</p>
+          <p> <b>middle</b> will align it with the middle and <b>bottom</b> to the bottom. Anyway, this is bad practice now that CSS exists, it's just good to know</p>
+          <hr>
+        <h3>Figure and figcaption tags</h3>
+          <p>The <b>figure</b> element is made to associate an image and it's caption. Several images can be in the same figure as long as they share the same caption </p>
+            <br>
+              <figure>
+                <img src="Images\ElTruco.jpg" alt="el truco el bistuuuu" width="400" height="400">
+                <br>
+                <figcaption>El truco enjoys un cafe muy bueno AAAAH SI SI Saka,Sakama !!!</figcaption>
+              </figure>
+<a href="index.html">Back to index</a>
+  </body>
+</html>

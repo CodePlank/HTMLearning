@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tables</title>
+  </head>
+  <body>
+    <h1>Tables</h1>
+      <h2>BASIC TABLE STRUCTURE</h2>
+      <p>The table element < table > is use to to create a table, the content and rows are written inside this tag.<br>
+        The < tr > tag (table row) indicates the start of each row. it is followed by one or several < td > elements (one for each cell in that row)<br>
+        Each cell of a table is represented using < td >, </p>
+          <h3>Example</h3>
+          <table>
+            <tr>
+              <td>THIS</td>
+              <td>is</td>
+              <td>a table</td>
+            </tr>
+            <tr>
+              <td>see?</td>
+              <td>it's</td>
+              <td>easy</td>
+            </tr>
+            <tr>
+              <td>to</td>
+              <td>make</td>
+              <td>one</td>
+            </tr>
+          </table>
+      <h2>TABLE HEADINGS</h2>
+      <p><b>< th ></b> element is used like the <b>< td ></b> but it represents the heading of a row/column (th stands for table heading)<br>
+      Even if a cell has no content, you still need to use a td or th element to represent the presence of an empty cell or it will mess up the table rendering <br>
+      You can use the <b>scope</b> element to indicate whether it's a column or row. To do so, use the value "row" or "col" to indicate them respectively</p>
+        <h3>Example</h3>
+        <table>
+          <tr>
+            <th></th>
+            <th scope="row">Dog</th>
+            <th scope="row">Challenger</th>
+          </tr>
+          <tr>
+           <th scope="col"> Streamer</th>
+           <td>ElTruco</td>
+           <td>Gross Gore</td>
+          </tr>
+          <tr>
+           <th scope="col"> Player</th>
+            <td>Jankos</td>
+            <td>Fakeru</td>
+          </tr>
+        </table>
+      <h2>Spanning Columns</h2>
+      <p>Sometimes you need the entries in a table to stretch access more than one column <br>
+      The <b>< colspan ></b>can be attribute, used in a td or th element to indicate how many columns this cell should run accross. <br></p>
+        <h3>Example</h3>
+        <table>
+          <tr>
+            <th></th>
+            <th colspan="2">El truco</th>
+            <th>Grossie Gore</th>
+            <th>Dopa</th>
+          </tr>
+          <tr>
+            <th>Strenghts</th>
+            <td>Dcane</td>
+            <td>woof</td>
+            <td>Bruvkek</td>
+            <td>Korean</td>
+          </tr>
+          <tr>
+            <th>Weaknesses</th>
+            <td>Junglers</td>
+            <td>caddies</td>
+            <td>Dopa</td>
+            <td>Small D xD</td>
+          </tr>
+        </table>
+      <h2>SPANNING ROWS</h2>
+      <p>The same thing might be used for rows, < rowspan > can be used equally on th and td elements</p>
+        <h3>Example</h3>
+      <table>
+        <tr>
+        <th></th>
+        <th>Challenger</th>
+        <th>Master</th>
+        <th>Bronze 5</th>
+        </tr>
+        <tr>
+          <th>Streamer</th>
+          <td rowspan="2">Jankos</td>
+          <td>Tobias Fate</td>
+          <td>El truco</td>
+        </tr>
+        <tr>
+          <th>Player</th>
+          <td>Caps</td>
+          <td>Nemesis</td>
+        </tr>
+      </table>
+      <h2>TABLE HEADER, BODY AND FOOTER</h2>
+      <p>3 elements can help distinguish between the main content of a table, the first and last row</p>
+      <ul>
+        <li>< thead > The headings of the table should be inside this element</li>
+        <li>< tbody > The body of the table should be inside this element</li>
+        <li>< tfooter > The footer of the table should be inside this element</li>
+      </ul>
+        <h3>Example</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Player 1</th>
+            <th>Player 2</th>
+            <th>Synergy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Truco2g</td>
+            <td>Tobito</td>
+            <td>Toxic</td>
+          </tr>
+          <tr>
+            <td>jankos</td>
+            <td>Rekkles</td>
+            <td>Bromance</td>
+          </tr>
+          <tr>
+            <td>Caps</td>
+            <td>Perkz</td>
+            <td>Virgin City</td>
+          </tr>
+          </tbody>
+          <tfoot>
+            <td>WTF</td>
+            <td>AM I</td>
+            <td>DOING</td>
+          </tfoot>
+      </table>
+      <h2>NOTES ON OLD CODE: WIDTH, SPACING, BORDER AND BACKGROUND.</h2>
+      <p>These have been replaced by CSS, but you might come accross them sometimes.<br>
+      You can use the following attributes :</p>
+      <ul>
+        <li>The width attribute could be used in the table tag or any td/th element to indicate how wide this element should be.<br>
+        The columns in a table need to form a straight line, so you will very often see this attribute on the first row, the following rows will adapt.</li>
+        <li>The opening table tag could also use the cellpadding attribute to create space between each cell</li>
+        <li>The border attribute was used to add... well a border. Followed by "=x" x being the width of the border in pixel.</li>
+        <li>the bgcolor attribute was used to set the background color, and could be used for the whole table or individual cells.</li>
+      </ul>
+        <a href="index.html">index</a>
+  </body>
+</html>
